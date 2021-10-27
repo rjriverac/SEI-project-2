@@ -24,9 +24,6 @@ const CharacterDetail = () => {
         const { data } = await axios.get('https://finalspaceapi.com/api/v0/quote')
         console.log('after axios')
         setQuotes(data)
-        // setQuotes(data.filter(quote => {
-        //   return quote.by === character.name
-        // }))
       } catch (error) {
         console.log(error)
       }
@@ -35,7 +32,6 @@ const CharacterDetail = () => {
     getQuotes()
   }, [id])
 
-  console.log(quotes)
   return (
     <section className="section">
       <div className="container">
