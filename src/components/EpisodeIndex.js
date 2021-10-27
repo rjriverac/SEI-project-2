@@ -2,41 +2,40 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import CharacterCard from './CharacterCard'
 
-const CharacterIndex = () => {
+const EpisodeIndex = () => {
 
-  const [characterArray,setCharacterArray] = useState([])
+  const [episodeArray, setEpisodeArray] = useState([])
 
-  useEffect(()=> {
+  useEffect(() => {
     const getData = async() => {
       try {
-        const { data } = await axios.get('https://finalspaceapi.com/api/v0/character/')
-        setCharacterArray(data)
+        const { data } = await axios.get('https://finalspaceapi.com/api/v0/episode')
+        setEpisodeArray(data)
       } catch (error) {
         console.log(error)
       }
     }
     getData()
   },[])
-  // console.log(characterArray)
+
+  console.log(episodeArray)
+
   return (
-    // <h1>CharacterIndex</h1>
     <section className="section">
       <div className="container">
         <div className="columns is-multiline">
-          {characterArray.map((character,index)=> {
+          {episodeArray.map((episode,index)=> {
             return (
               <CharacterCard 
-                value={character}
+                value={episode}
                 key={index}
-                item='characters'
+                item='episodes'
               />
             )
           })}
         </div>
       </div>
     </section>
-    
   )
 }
-
-export default CharacterIndex
+export default EpisodeIndex
