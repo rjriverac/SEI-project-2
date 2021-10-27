@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import CharacterCard from './CharacterCard'
 
 
 const CharacterIndex = () => {
@@ -25,20 +26,10 @@ const CharacterIndex = () => {
         <div className="columns is-multiline">
           {characterArray.map((character,index)=> {
             return (
-              <div key={index} className="column is-one-third">
-                <div className="card">
-                  <div className="card-image">
-                    <figure className="image is-square">
-                      <img src={character.img_url} alt={character.name}/>
-                    </figure>
-                  </div>
-                  <div className="card-header">
-                    <div className="card-header-title is-centered">
-                      <p className="title is-5">{character.name}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <CharacterCard 
+                character={character}
+                key={index}
+              />
             )
           })}
         </div>

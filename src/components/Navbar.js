@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar is-primary is-fixed-top is-spaced">
+      <nav className="navbar is-primary is-spaced">
         <div className="navbar-brand">
           <span role="img" className="title">
             <Link to="/"><img src={mainlogo} width="128" height="128"/></Link>
