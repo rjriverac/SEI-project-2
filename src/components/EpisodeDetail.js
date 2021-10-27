@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 
 const EpisodeDetail = () => {
   const [episode,setEpisode] = useState(null)
   const { id } = useParams()
+
+
 
   useEffect(()=> {
     const getData = async () => {
@@ -15,9 +18,12 @@ const EpisodeDetail = () => {
         console.log(error)
       }
     }
+
     getData()
   },[id])
-  console.log(episode.characters.map((url)=> url.split('/')))
+
+
+  // console.log(episode.characters.map((url)=> url.split('/').pop()))
   return (
     // <h1>Hello</h1>
     <section className="section">
@@ -63,7 +69,40 @@ const EpisodeDetail = () => {
             <div className="tile is-ancestor">
               <div className="tile is-parent">
                 <div className="tile is-child notification is-info has-text-centered">
-                  <p>thebox</p>
+                  <div className="buttons">
+                    {episode.characters.map((url,index)=> {
+                      const address = url.split('/').pop()
+                      const charinfo = async () => {
+                        try {
+                          const { data } = await axios.get(`${url}`)
+                          const result = [data.name,data.img_url]
+                          return result
+                        } catch (error) {
+                          console.log(error)
+                        }
+                      }
+                      charinfo()
+                      console.log(charinfo())
+                      return (
+                        <div key={index}>
+                          <Link to={`/characters/${address}`}  className="card">
+                            <div className="card-content">
+                              <div className="media">
+                                <div className="media-left">
+                                  <figure className="image is-48x48">
+                                    <img src={charinfo[0]}/>
+                                  </figure>
+                                </div>
+                              </div>
+                              <div className="media-content">
+                                <p>{charinfo[0]}</p>
+                              </div>
+                            </div>
+                          </Link>
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
