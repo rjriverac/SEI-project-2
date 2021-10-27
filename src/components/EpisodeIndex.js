@@ -18,7 +18,6 @@ const EpisodeIndex = () => {
     getData()
   },[])
 
-  console.log(episodeArray)
 
   return (
     <section className="section">
