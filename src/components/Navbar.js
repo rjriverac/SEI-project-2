@@ -6,15 +6,16 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar is-primary is-fixed-top">
+      <nav className="navbar is-primary is-fixed-top is-spaced">
         <div className="navbar-brand">
           <span role="img" className="title">
             <Link to="/"><img src={mainlogo} width="128" height="128"/></Link>
           </span>
         </div>
-        <div className="navbar-menu">
-          <div className="navbar-start">
+        <div className="navbar-menu is-active">
+          <div className="navbar-end">
             <Link to="/" className="navbar-item has-text-white"><p>Home</p></Link>
+            <Link to="/characters" className="navbar-item has-text-white"><p>Characters</p></Link>
           </div>
         </div>
       </nav>
