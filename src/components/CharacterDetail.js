@@ -53,9 +53,6 @@ const CharacterDetail = () => {
                     <div className="tile is-parent">
                       <div className="tile is-child notification is-info">
                         <p className="title is-4">Aliases:</p>
-                        {/* <p className="subtitle">{character.gender}</p>
-                        <p className="title is-5">🦍 Hair:</p>
-                        <p className="subtitle">{character.hair}</p> */}
                         {character.alias.map((name,index)=> {
                           return (
                             <li key={index}>{name}</li>
@@ -87,11 +84,6 @@ const CharacterDetail = () => {
                   <div className="tile is-parent">
                     <div className="tile is-child notification is-danger">
                       <p className="title is-4">Quotes</p>
-                      {/* {quotes.map((quote,index) => {
-                        return (
-                          <li key={index}>{quote.quote}</li>
-                        )
-                      })} */}
 
                       {quotes.filter(quote => quote.by === character.name).map((quote,index)=> {
                         return (
