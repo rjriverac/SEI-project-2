@@ -3,13 +3,19 @@
   src: url(../assets/KungFuMaster-K7vrX.otf);
 }
 
+@font-face {
+  font-family: Brave;
+  src: url(../assets/BraveEightyoneRegular-ZVGvm.ttf);
+}
+
+
 #nav-menu {
   background-color: hsl(0, 0%, 21%);
 }
 
 body {
   background-color: hsl(171, 100%, 29%);
-  /* font-family: Jatiny, sans-serif; */
+  font-family: Brave, sans-serif;
 }
 
 .title, .navbar-item {

@@ -39,7 +39,7 @@ const CharacterDetail = () => {
         <div className="container">
           {character ?
             <div>
-              <h2 className="title has-text-white animate__animated animate__slow animate__slideInLeft">{character.name.toUpperCase()}</h2>
+              <h2 className="title is-size-1 has-text-white has-text-weight-normal animate__animated animate__slow animate__slideInLeft">{character.name.toUpperCase()}</h2>
               <hr />
 
               <div className="columns">
@@ -54,7 +54,7 @@ const CharacterDetail = () => {
                     <div className ="tile is-parent">
                       <div className="tile is-parent">
                         <div className="tile is-child notification is-info is-light">
-                          <p className="title is-4">Aliases:</p>
+                          <p className="title has-text-weight-normal">Aliases:</p>
                           {character.alias.map((name,index)=> {
                             return (
                               <li key={index}>{name}</li>
@@ -64,17 +64,17 @@ const CharacterDetail = () => {
                       </div>
                       <div className="tile is-parent is-vertical">
                         <div className="tile is-child notification is-link is-light">
-                          <p className="title is-4">👤 Species:</p>
+                          <p className="title has-text-weight-normal">👤 Species:</p>
                           <p className="subtitle">{character.species}</p>
-                          <p className="title is-5">🌍 Origin:</p>
+                          <p className="title has-text-weight-normal">🌍 Origin:</p>
                           <p className="subtitle">{character.origin}</p>
-                          <p className="title is-4">Gender:</p>
+                          <p className="title has-text-weight-normal">Gender:</p>
                           <p className="subtitle">{character.gender}</p>
-                          <p className="title is-5">🦍 Hair:</p>
+                          <p className="title has-text-weight-normal">🦍 Hair:</p>
                           <p className="subtitle">{character.hair}</p>
                         </div>
                         <div className="tile is-child notification is-danger is-light">
-                          <p className="title is-4 ">🏆 Abilities</p>
+                          <p className="title has-text-weight-normal">🏆 Abilities</p>
                           {character.abilities.map((ability,index)=>{
                             return (
                               <li key={index}>{ability}</li>
@@ -85,7 +85,7 @@ const CharacterDetail = () => {
                     </div>
                     <div className="tile is-parent">
                       <div className="tile is-child notification is-warning is-light">
-                        <p className="title is-4">Quotes</p>
+                        <p className="title has-text-weight-normal">Quotes</p>
 
                         {quotes.filter(quote => quote.by === character.name).map((quote,index)=> {
                           return (

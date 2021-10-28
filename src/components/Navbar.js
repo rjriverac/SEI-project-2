@@ -9,7 +9,7 @@ const Navbar = () => {
       <nav className="navbar is-dark is-spaced">
         <div className="navbar-brand">
           <span role="img" className="title">
-            <Link to="/"><img src={mainlogo} width="128" height="128"/></Link>
+            <Link to="/"><img src={mainlogo} width="96" height="96"/></Link>
           </span>
         </div>
         <div className="navbar-menu is-dark is-active" id="nav-menu">
