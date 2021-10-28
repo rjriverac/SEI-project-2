@@ -1,0 +1,25 @@
+#nav-menu {
+  background-color: hsl(0, 0%, 21%);
+}
+
+body {
+  background-color: hsl(171, 100%, 29%);
+}
+
+.hero-body {
+  background-image: url('../assets/Final_Space_Cover.jpeg');
+  background-size: 95%, contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#character-detail {
+  min-height: 100vh;
+}
+
+#hero-text {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.tile .is-child {
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.6);
+}

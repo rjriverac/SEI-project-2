@@ -33,77 +33,80 @@ const CharacterDetail = () => {
   }, [id])
 
   return (
-    <section className="section">
-      <div className="container">
-        {character ?
-          <div>
-            <h2 className="title">{character.name}</h2>
-            <hr />
+    <>
+      <section className="section has-background-link-dark" id="character-detail">
 
-            <div className="columns">
-              <div className="column is-half">
-                <figure className="image">
-                  <img src={character.img_url} alt={character.name}/>
-                </figure>
-              </div>
+        <div className="container">
+          {character ?
+            <div>
+              <h2 className="title has-text-white">{character.name}</h2>
+              <hr />
 
-              <div className="column is-half">
-                <div className="tile is-ancestor is-vertical">
-                  <div className ="tile is-parent">
+              <div className="columns">
+                <div className="column is-half">
+                  <figure className="image">
+                    <img src={character.img_url} alt={character.name}/>
+                  </figure>
+                </div>
+
+                <div className="column is-half">
+                  <div className="tile is-ancestor is-vertical">
+                    <div className ="tile is-parent">
+                      <div className="tile is-parent">
+                        <div className="tile is-child notification is-info is-light">
+                          <p className="title is-4">Aliases:</p>
+                          {character.alias.map((name,index)=> {
+                            return (
+                              <li key={index}>{name}</li>
+                            )
+                          })}
+                        </div>
+                      </div>
+                      <div className="tile is-parent is-vertical">
+                        <div className="tile is-child notification is-link is-light">
+                          <p className="title is-4">👤 Species:</p>
+                          <p className="subtitle">{character.species}</p>
+                          <p className="title is-5">🌍 Origin:</p>
+                          <p className="subtitle">{character.origin}</p>
+                          <p className="title is-4">Gender:</p>
+                          <p className="subtitle">{character.gender}</p>
+                          <p className="title is-5">🦍 Hair:</p>
+                          <p className="subtitle">{character.hair}</p>
+                        </div>
+                        <div className="tile is-child notification is-danger is-light">
+                          <p className="title is-4 ">🏆 Abilities</p>
+                          {character.abilities.map((ability,index)=>{
+                            return (
+                              <li key={index}>{ability}</li>
+                            )
+                          })}
+                        </div>
+                      </div> 
+                    </div>
                     <div className="tile is-parent">
-                      <div className="tile is-child notification is-info">
-                        <p className="title is-4">Aliases:</p>
-                        {character.alias.map((name,index)=> {
+                      <div className="tile is-child notification is-warning is-light">
+                        <p className="title is-4">Quotes</p>
+
+                        {quotes.filter(quote => quote.by === character.name).map((quote,index)=> {
                           return (
-                            <li key={index}>{name}</li>
+                            <li key={index}>{quote.quote}</li>
                           )
                         })}
                       </div>
                     </div>
-                    <div className="tile is-parent is-vertical">
-                      <div className="tile is-child notification is-success">
-                        <p className="title is-4">👤 Species:</p>
-                        <p className="subtitle">{character.species}</p>
-                        <p className="title is-5">🌍 Origin:</p>
-                        <p className="subtitle">{character.origin}</p>
-                        <p className="title is-4">Gender:</p>
-                        <p className="subtitle">{character.gender}</p>
-                        <p className="title is-5">🦍 Hair:</p>
-                        <p className="subtitle">{character.hair}</p>
-                      </div>
-                      <div className="tile is-child notification is-link">
-                        <p className="title is-4">🏆 Abilities</p>
-                        {character.abilities.map((ability,index)=>{
-                          return (
-                            <li key={index}>{ability}</li>
-                          )
-                        })}
-                      </div>
-                    </div> 
-                  </div>
-                  <div className="tile is-parent">
-                    <div className="tile is-child notification is-danger">
-                      <p className="title is-4">Quotes</p>
 
-                      {quotes.filter(quote => quote.by === character.name).map((quote,index)=> {
-                        return (
-                          <li key={index}>{quote.quote}</li>
-                        )
-                      })}
-                    </div>
                   </div>
-
                 </div>
               </div>
             </div>
-          </div>
 
-          :
-          <p>...loading</p>
-        }
-      </div>
-    </section>
-
+            :
+            <p>...loading</p>
+          }
+        </div>
+      </section>
+      {/* <section className="section has-background-link-dark"></section> */}
+    </>
   )
 }
 export default CharacterDetail

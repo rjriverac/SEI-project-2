@@ -12,7 +12,7 @@ const Navbar = () => {
             <Link to="/"><img src={mainlogo} width="128" height="128"/></Link>
           </span>
         </div>
-        <div className="navbar-menu is-active">
+        <div className="navbar-menu is-dark is-active" id="nav-menu">
           <div className="navbar-end">
             <Link to="/" className="navbar-item has-text-white"><p>Home</p></Link>
             <Link to="/characters" className="navbar-item has-text-white"><p>Characters</p></Link>

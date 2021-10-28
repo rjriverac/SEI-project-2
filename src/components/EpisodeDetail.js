@@ -7,8 +7,6 @@ const EpisodeDetail = () => {
   const [episode,setEpisode] = useState(null)
   const { id } = useParams()
 
-
-
   useEffect(()=> {
     const getData = async () => {
       try {

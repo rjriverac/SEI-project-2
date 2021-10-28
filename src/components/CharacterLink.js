@@ -20,8 +20,6 @@ const CharacterLink = ({ index, address, url }) => {
     charinfo()
 
   },[index])
-  
-
 
   return (
     <>

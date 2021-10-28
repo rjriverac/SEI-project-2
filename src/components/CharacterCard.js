@@ -13,8 +13,8 @@ const CharacterCard = ({ index, value, item }) => {
             </figure>
           </div>
           <div className="card-header">
-            <div className="card-header-title is-centered">
-              <p className="title is-5">{value.name}</p>
+            <div className="card-header-title has-background-dark is-centered">
+              <p className="title is-5 has-text-white">{value.name}</p>
             </div>
           </div>
         </div>
