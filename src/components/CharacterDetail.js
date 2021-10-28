@@ -44,7 +44,7 @@ const CharacterDetail = () => {
 
               <div className="columns">
                 <div className="column is-one-third-desktop is-one-half-tablet animate__animated animate__slow animate__slideInDown">
-                  <figure className="image">
+                  <figure className="image" id="character-id">
                     <img src={character.img_url} alt={character.name}/>
                   </figure>
                 </div>

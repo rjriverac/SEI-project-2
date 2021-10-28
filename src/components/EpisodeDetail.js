@@ -24,7 +24,7 @@ const EpisodeDetail = () => {
   // console.log(episode.characters.map((url)=> url.split('/').pop()))
   return (
     // <h1>Hello</h1>
-    <section className="section">
+    <section className="section has-background-info-dark">
       <div className="container">
         {
           episode ?
@@ -66,7 +66,7 @@ const EpisodeDetail = () => {
           episode ? 
             <div className="tile is-ancestor animate__animated animate__slow animate__slideInUp">
               <div className="tile is-parent">
-                <div className="tile is-child notification is-info px-5">
+                <div className="tile is-child notification is-primary-light px-5">
                   <p className="title has-text-weight-normal has-text-centered">Characters in Episode</p>
                   <div className="columns is-multiline is-justify-content-center">
                     {episode.characters.map((url,index)=> {

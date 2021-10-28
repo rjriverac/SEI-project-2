@@ -28,14 +28,14 @@ const CharacterLink = ({ index, address, url }) => {
       
           <div className="column is-one-quarter" key={index}>
             <Link to={`/characters/${address}`}  className="card">
-              <div className="card-content has-background-link-dark">
+              <div className="card-content has-background-primary-dark">
                 <div className="card-image">
                   <figure className="image is-square">
                     <img src={characterStuff[1]}/>
                   </figure>
                 </div>
-                <div className="content has-text-centered">
-                  <p className="title is-6 has-text-weight-normal">{characterStuff[0]}</p>
+                <div className="content has-text-centered has-text-light">
+                  <p className="title is-5 has-text-weight-normal">{characterStuff[0]}</p>
                 </div>
               </div>
             </Link>
