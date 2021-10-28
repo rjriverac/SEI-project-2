@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router'
-import { Link } from 'react-router-dom'
 import CharacterLink from './CharacterLink'
 
 const EpisodeDetail = () => {
@@ -69,8 +68,8 @@ const EpisodeDetail = () => {
           episode ? 
             <div className="tile is-ancestor">
               <div className="tile is-parent">
-                <div className="tile is-child notification is-info has-text-centered">
-                  <div className="buttons">
+                <div className="tile is-child notification is-info px-5">
+                  <div className="columns is-multiline is-justify-content-center">
                     {episode.characters.map((url,index)=> {
                       const address = url.split('/').pop()
                       

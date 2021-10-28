@@ -22,24 +22,22 @@ const CharacterLink = ({ index, address, url }) => {
   },[index])
   
 
-  console.log(characterStuff)
+
   return (
     <>
       { 
         characterStuff ? 
       
-          <div key={index}>
+          <div className="column is-one-quarter" key={index}>
             <Link to={`/characters/${address}`}  className="card">
               <div className="card-content">
-                <div className="media">
-                  <div className="media-left">
-                    <figure className="image is-48x48">
-                      <img src={characterStuff[1]}/>
-                    </figure>
-                  </div>
+                <div className="card-image">
+                  <figure className="image is-square">
+                    <img src={characterStuff[1]}/>
+                  </figure>
                 </div>
-                <div className="media-content">
-                  <p>{characterStuff[0]}</p>
+                <div className="content has-text-centered">
+                  <p className="title is-6">{characterStuff[0]}</p>
                 </div>
               </div>
             </Link>
