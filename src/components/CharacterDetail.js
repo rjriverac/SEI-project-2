@@ -49,7 +49,7 @@ const CharacterDetail = () => {
                   </figure>
                 </div>
 
-                <div className="column s-one-third-desktop is-one-half-tablet animate__animated animate__slow animate__slideInRight">
+                <div className="column is-one-third-desktop is-one-half-tablet animate__animated animate__slow animate__slideInRight">
                   <div className="tile is-ancestor is-vertical">
                     <div className ="tile is-parent">
                       <div className="tile is-parent">

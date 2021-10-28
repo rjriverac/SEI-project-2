@@ -29,15 +29,15 @@ const EpisodeDetail = () => {
         {
           episode ?
             <div>
-              <h2 className="title has-text-white has-text-weight-normal is-size-1">{episode.name}</h2>
+              <h2 className="title has-text-white has-text-weight-normal is-size-1 animate__animated animate__slow animate__slideInLeft">{episode.name}</h2>
               <hr />
               <div className="columns">
-                <div className="column is-half">
-                  <figure className="image">
+                <div className="column is-half animate__animated animate__slow animate__slideInLeft">
+                  <figure className="image" id="episode-image">
                     <img src={episode.img_url} alt={episode.name}/>
                   </figure>
                 </div>
-                <div className="column is-half">
+                <div className="column is-half animate__animated animate__slow animate__slideInRight">
                   <div className="tile is-ancestor is-vertical">
                     <div className="tile is-parent">
                       <div className="tile is-child box">
@@ -64,7 +64,7 @@ const EpisodeDetail = () => {
         }
         {
           episode ? 
-            <div className="tile is-ancestor">
+            <div className="tile is-ancestor animate__animated animate__slow animate__slideInUp">
               <div className="tile is-parent">
                 <div className="tile is-child notification is-info px-5">
                   <p className="title has-text-weight-normal has-text-centered">Characters in Episode</p>
