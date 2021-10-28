@@ -39,17 +39,17 @@ const CharacterDetail = () => {
         <div className="container">
           {character ?
             <div>
-              <h2 className="title has-text-white">{character.name}</h2>
+              <h2 className="title has-text-white animate__animated animate__slow animate__slideInLeft">{character.name.toUpperCase()}</h2>
               <hr />
 
               <div className="columns">
-                <div className="column is-half">
+                <div className="column is-one-third-desktop is-one-half-tablet animate__animated animate__slow animate__slideInDown">
                   <figure className="image">
                     <img src={character.img_url} alt={character.name}/>
                   </figure>
                 </div>
 
-                <div className="column is-half">
+                <div className="column s-one-third-desktop is-one-half-tablet animate__animated animate__slow animate__slideInRight">
                   <div className="tile is-ancestor is-vertical">
                     <div className ="tile is-parent">
                       <div className="tile is-parent">

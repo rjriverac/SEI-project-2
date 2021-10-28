@@ -1,9 +1,19 @@
+@font-face {
+  font-family: Jatiny;
+  src: url(../assets/KungFuMaster-K7vrX.otf);
+}
+
 #nav-menu {
   background-color: hsl(0, 0%, 21%);
 }
 
 body {
   background-color: hsl(171, 100%, 29%);
+  /* font-family: Jatiny, sans-serif; */
+}
+
+.title, .navbar-item {
+  font-family: Jatiny, sans-serif;
 }
 
 .hero-body {
