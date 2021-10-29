@@ -29,10 +29,7 @@ body {
   background-position: center;
 }
 
-#character-detail {
-  min-height: 100vh;
-}
-#index-section {
+#character-detail, #index-section {
   min-height: 100vh;
 }
 #hero-text {
