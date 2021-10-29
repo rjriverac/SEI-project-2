@@ -5,6 +5,8 @@ import CharacterCard from './CharacterCard'
 const CharacterIndex = () => {
 
   const [characterArray,setCharacterArray] = useState([])
+  const [search, setSearch] = useState('')
+  const [filteredCharacters, setFiltered] = useState([])
 
   useEffect(()=> {
     const getData = async() => {
@@ -17,21 +19,55 @@ const CharacterIndex = () => {
     }
     getData()
   },[])
+
+  useEffect(() => {
+    const filteredCharac = () => {
+      const regexSearch = new RegExp(search, 'i') 
+      const filtered = characterArray.filter(character => {
+        return regexSearch.test(character.name)
+      })
+      setFiltered(filtered)
+    } 
+    filteredCharac()
+  }, [search])
+
+  const handleSearch = (event) => {
+    setSearch(event.target.value)
+  }
   // console.log(characterArray)
   return (
     // <h1>CharacterIndex</h1>
-    <section className="section">
-      <div className="container">
+    <section className="section columns">
+      <div className="column  is-narrow">
+        <div className="control has-icons-left">
+          <input className="input is-rounded is-hovered" placeholder="Search characters" onChange={handleSearch} type="search"/>
+          <span className="icon is-left">
+            <i className="fas fa-search"></i>
+          </span>
+        </div>
+
+      </div>
+      <div className="container column">
         <div className="columns is-multiline">
-          {characterArray.map((character,index)=> {
-            return (
-              <CharacterCard 
-                value={character}
-                key={index}
-                item='characters'
-              />
-            )
-          })}
+          {filteredCharacters.length ? 
+            filteredCharacters.map((character,index)=> {
+              return (
+                <CharacterCard 
+                  value={character}
+                  key={index}
+                  item='characters'
+                />
+              )
+            })
+            : characterArray.map((character,index) => {
+              return (
+                <CharacterCard 
+                  value={character}
+                  key={index}
+                  item='characters'
+                />
+              )
+            })}
         </div>
       </div>
     </section>
