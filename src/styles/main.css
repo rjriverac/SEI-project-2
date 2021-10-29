@@ -32,7 +32,9 @@ body {
 #character-detail {
   min-height: 100vh;
 }
-
+#index-section {
+  min-height: 100vh;
+}
 #hero-text {
   background-color: rgba(0, 0, 0, 0.6);
 }
