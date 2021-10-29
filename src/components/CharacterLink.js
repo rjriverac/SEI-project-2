@@ -18,14 +18,12 @@ const CharacterLink = ({ index, address, url }) => {
       }
     }
     charinfo()
-
   },[index])
 
   return (
     <>
       { 
         characterStuff ? 
-      
           <div className="column is-one-quarter" key={index}>
             <Link to={`/characters/${address}`}  className="card">
               <div className="card-content has-background-primary-dark">
@@ -41,7 +39,7 @@ const CharacterLink = ({ index, address, url }) => {
             </Link>
           </div>
           :
-          <p>loading</p>
+          <p><i className="fa-solid fa-hourglass"></i>Loading..</p>
       }
     </>
     

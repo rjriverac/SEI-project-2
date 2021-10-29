@@ -34,9 +34,8 @@ const CharacterIndex = () => {
   const handleSearch = (event) => {
     setSearch(event.target.value)
   }
-  // console.log(characterArray)
+
   return (
-    // <h1>CharacterIndex</h1>
     <section className="section columns">
       <div className="column  is-narrow">
         <div className="control has-icons-left">
@@ -45,7 +44,6 @@ const CharacterIndex = () => {
             <i className="fas fa-search"></i>
           </span>
         </div>
-
       </div>
       <div className="container column">
         <div className="columns is-multiline">
