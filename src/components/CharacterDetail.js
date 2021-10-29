@@ -19,11 +19,8 @@ const CharacterDetail = () => {
       }
     }
     const getQuotes = async () => {
-      console.log('getting quotes')
       try {
-        console.log('about to get quotes')
         const { data } = await axios.get('https://finalspaceapi.com/api/v0/quote')
-        console.log('after axios')
         setQuotes(data)
       } catch (error) {
         console.log(error)
