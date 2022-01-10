@@ -1,5 +1,8 @@
-# Project 2 Readme
+# Final Space
+
 ## Overview
+
+![](home.gif)
 
 This project was a 2-day paired hackathon to create a React application that consumes a public API. It was my second project as a GA student, and I worked with [Gayatri Rajgor](https://github.com/gayatrirajgor).
 
