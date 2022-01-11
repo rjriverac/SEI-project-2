@@ -35,39 +35,41 @@ As it was our first React app, we decided to go with a relatively simple design,
  
 ### Index Pages
 We used axios get requests to retrieve all characters and episodes for their respective index pages, and then used an array map to pass each element to a child card component to render each card as a link to a detail page.
-``` 
+
+![](fscharindes.gif)
+```javascript 
 filteredCharacters.map((character,index)=> {
              return (
                <CharacterCard
                  value={character}
                  key={index}
-                 item=‘characters’
+                 item='characters'
                />
              )
            })
  
-<div className=“columns is-multiline”>
+<div className='columns is-multiline'>
          {episodeArray.map((episode,index)=> {
            return (
              <CharacterCard
                value={episode}
                key={index}
-               item=‘episodes’
+               item='episodes'
              />
            )
          })}
        </div>
 
 <Link to={`/${item}/${value.id}`}>
-       <div className=“card animate__animated animate__headShake”>
-         <div className=“card-image”>
+       <div className='card animate__animated animate__headShake'>
+         <div className='card-image'>
            <figure className={`image ${item === 'characters' ? 'is-square' : 'is-2by1' }`}>
              <img src={value.img_url} alt={value.name}/>
            </figure>
          </div>
-         <div className=“card-header”>
-           <div className=“card-header-title has-background-dark is-centered”>
-             <p className=“title is-5 has-text-white”>{value.name}</p>
+         <div className='card-header'>
+           <div className='card-header-title has-background-dark is-centered'>
+             <p className='title is-5 has-text-white'>{value.name}</p>
            </div>
          </div>
        </div>
@@ -76,7 +78,11 @@ filteredCharacters.map((character,index)=> {
 ### Detail Pages
 
 We took a similar approach with the detail pages, where we would utilize a useEffect to run our axios request to the API, and pass the values into a child component for rendering. For instance, we wanted to showcase each characters’ notable quotes, but the API did not have a filtered quote endpoint. So in the initial detail component, we ran the get request to grab the individual character info as well as all quotes, and then passed both objects to the child component where we filtered the quotes and rendered the character information together.
-```
+
+![](fschardetail.gif)
+
+```javascript
+
 useEffect(() => {
    const getData = async () => {
      try {
@@ -88,7 +94,7 @@ useEffect(() => {
    }
    const getQuotes = async () => {
      try {
-       const { data } = await axios.get(‘https://finalspaceapi.com/api/v0/quote’)
+       const { data } = await axios.get('https://finalspaceapi.com/api/v0/quote')
        setQuotes(data)
      } catch (error) {
        console.log(error)
@@ -100,33 +106,32 @@ useEffect(() => {
  
  return (
    <>
-     <section className=“section has-background-link-dark” id=“character-detail”>
-       <div className=“container”>
+     <section className='section has-background-link-dark' id='character-detail'>
+       <div className='container'>
          {character ?
            <CharacterTiles
              character={character}
              quotes={quotes}
            />
            :
-           <p><I className=“fa-solid fa-hourglass”></I>…Loading</p>
+           <p><I className='fa-solid fa-hourglass'></I>…Loading</p>
          }
        </div>
      </section>
    </>
  )
-               <div className=“tile is-child notification is-danger is-light”>
-                 <p className=“title has-text-weight-normal”><I className=“fas fa-trophy”></I> Abilities</p>
+               <div className='tile is-child notification is-danger is-light'>
+                 <p className='title has-text-weight-normal'><I className='fas fa-trophy'></I> Abilities</p>
                  {character.abilities.map((ability,index)=>{
                    return (
                      <li key={index}>{ability}</li>
                    )
                  })}
                </div>
-             </div>
-           </div>
-           <div className=“tile is-parent”>
-             <div className=“tile is-child notification is-warning is-light”>
-               <p className=“title has-text-weight-normal”><I className=“fas fa-quote-left”></I> Quotes <I className=“fas fa-quote-right”></I></p>
+                /* */
+           <div className='tile is-parent'>
+             <div className='tile is-child notification is-warning is-light'>
+               <p className='title has-text-weight-normal'><I className='fas fa-quote-left'></I> Quotes <I className='fas fa-quote-right'></I></p>
                {quotes.filter(quote => quote.by === character.name).map((quote,index)=> {
                  return (
                    <li key={index}>{quote.quote}</li>
@@ -135,8 +140,10 @@ useEffect(() => {
              </div>
 ```
 We had to alter our approach for the episode detail, since featured characters’ ids were returned by the API, so we had to pop each out of the data array and pass it into the map function and then do the get request from within the child component as well, rather than just the markup.
-```
-<div className=“columns is-multiline is-justify-content-center”>
+
+![](fsepisodedetail.gif)
+```jsx
+<div className='columns is-multiline is-justify-content-center'>
                      {episode.characters.map((url,index)=> {
                        const address = url.split(‘/‘).pop()
                        return (
