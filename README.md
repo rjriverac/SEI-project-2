@@ -165,7 +165,7 @@ We had to alter our approach for the episode detail, since featured charactersâ€
 ### Challenges
 * Bulma as a CSS framework took some getting used to, and the amount of markup required was an additional challenge for us.
 
-## Key Learnings:
+## Key Takeaways:
 * Pair Coding - working together provided many opportunities to see alternative approaches/preferences to solving problems, and I think both of us benefitted from each other in this regard. 
 * React - At the start our comfort level with the framework was pretty shaky, however as we worked on something a bit larger scale than we had before (particularly given the timeframe) the benefits became apparent, particularly with being able to re-use components, and conditionally render different states based on props.
 
